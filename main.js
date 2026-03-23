@@ -19,3 +19,21 @@ function typeWriter() {
 title.innerHTML = '';
 // Запускаем анимацию
 typeWriter();   
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Когда зашли в секцию — добавляем класс
+            entry.target.classList.add('appeared');
+        } else {
+            // Когда ушли из секции — убираем класс (анимация сбросится)
+            entry.target.classList.remove('appeared');
+        }
+    });
+}, { 
+    threshold: 0.1 // Сработает, как только покажется край карточки
+});
+
+document.querySelectorAll('.animate-card').forEach(card => {
+    observer.observe(card);
+});

@@ -97,3 +97,15 @@
   }
 }
 
+.animate-card {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95); // Чуть уменьшим и опустим
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); // Плавная кривая
+  transition-delay: var(--delay);
+  will-change: transform, opacity; // Подсказка браузеру для плавной работы
+}
+
+.animate-card.appeared {
+  opacity: 1;
+  transform: translateY(0) scale(1); // Возвращаем в нормальный вид
+}

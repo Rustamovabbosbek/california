@@ -103,6 +103,19 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.05);
 }
 
+.animate-card {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-delay: var(--delay);
+  will-change: transform, opacity;
+}
+
+.animate-card.appeared {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
 .contact {
   margin-top: 80px;
   display: flex;
@@ -397,6 +410,23 @@
     border-color: #fff;
   }
 }
+.into_banner {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%);
+}
+.into_banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.1;
+  pointer-events: none;
+}
+
 .sleder {
   flex-direction: column;
   display: flex;
