@@ -1,0 +1,99 @@
+.cards{
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .container{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_title{
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+  &_txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  &_box{
+    width: 1294px;
+    height: 792px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_box{
+      width: 639px;
+      height: 790px;
+      flex-direction: column;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &_first{
+        width: 639px;
+        height: 472px;
+        box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1), 
+        0 1px 8px rgba(0, 0, 0, 0.05);
+        &_image{
+          margin-left: 42px;
+        }
+        &_title{
+          text-align: end;
+          margin-right: 50px;
+        }
+        &_txt{
+          margin-left: 537px;
+        }
+      }
+      &_second{
+        width: 639px;
+        height: 270px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1), 
+        0 1px 8px rgba(0, 0, 0, 0.05);
+        &_image{
+          margin-left: 42px;
+        }
+        &_title{
+          text-align: end;
+          margin-right: 20px;
+        }
+      }
+    }
+    &_third{
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      width: 312px;
+      height: 792px;
+      box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.1), 
+      0 1px 8px rgba(0, 0, 0, 0.05);
+    }
+    &_fourth{
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+      width: 312px;
+      height: 792px;
+      box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.1), 
+      0 1px 8px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+

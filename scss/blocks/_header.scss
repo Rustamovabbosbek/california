@@ -1,0 +1,41 @@
+.header {
+    padding: 20px 30px;
+
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &_div {
+            &_ul {
+                display: flex;
+                gap: 30px;
+                list-style: none;
+
+                &_li {
+                    text-decoration: none;
+                    color: #000;
+                    font-size: 14px;
+                    font-weight: 500;
+                    transition: 0.3s;
+
+
+                    
+
+                }
+
+                &_li:hover{
+                    color: rgb(111, 113, 115);
+                    transition: 0.3s;
+                }
+            }
+        }
+
+        &_icons {
+            display: flex;
+            gap: 25px;
+
+        }
+    }
+}
+
