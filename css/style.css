@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -221,6 +222,41 @@
   background: #333;
 }
 
+.contact_tags_item {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+.contact_tags_item:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.1);
+  border-color: #000;
+}
+.contact_search_input, .contact_box_form_input {
+  transition: all 0.3s ease;
+}
+.contact_search_input:focus, .contact_box_form_input:focus {
+  border-color: #007AFF;
+  box-shadow: 0 0 10px rgba(0, 122, 255, 0.1);
+  outline: none;
+}
+.contact_box_form_btn {
+  background: #000;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.contact_box_form_btn:hover {
+  background: #333;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 .footer {
   margin-top: 40px;
   flex-direction: column;
@@ -264,8 +300,51 @@
   text-align: start;
 }
 
+.footer {
+  padding: 80px 0;
+  background-color: #fff;
+}
+.footer_box_box_txt {
+  font-size: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 0;
+}
+.footer_box_box_txt:hover {
+  color: #555;
+  padding-left: 15px;
+}
+.footer_box_box_txt:hover::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  opacity: 1;
+}
+.footer_box_box_txt::before {
+  content: "→";
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #000;
+}
+.footer_link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+.footer_link:hover {
+  transform: translateX(10px);
+}
+
 .gallery {
-  margin-top: 40px;
+  margin-top: 80px;
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -311,6 +390,41 @@
   text-decoration: none;
   color: black;
   border: 1px solid black;
+}
+
+.gallery_box_box {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+}
+.gallery_box_box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: #eee;
+}
+.gallery_box_box_link {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.gallery_box_box_link:hover {
+  background: #000;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.gallery_box_box_image {
+  transition: transform 0.6s ease;
+}
+.gallery_box_box:hover .gallery_box_box_image {
+  transform: scale(1.05) rotate(-2deg);
 }
 
 .header {
@@ -512,6 +626,24 @@
   margin-top: 60px;
 }
 
+[class^=sleder_box_] {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  padding: 15px;
+}
+[class^=sleder_box_]:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  background: #f9f9f9;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+[class^=sleder_box_] img {
+  transition: transform 0.5s ease;
+}
+[class^=sleder_box_]:hover img {
+  transform: rotate(2deg) scale(1.1);
+}
+
 .end {
   padding: 80px 0 40px;
   background-color: rgb(248, 249, 250);
@@ -578,4 +710,42 @@
   font-size: 14px;
   color: #888;
   font-weight: 500;
+}
+
+.end {
+  padding-top: 50px;
+  border-top: 1px solid #eee;
+}
+.end_nav_link {
+  display: block;
+  color: #777;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  width: fit-content;
+  position: relative;
+}
+.end_nav_link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: width 0.3s ease;
+}
+.end_nav_link:hover {
+  color: #000;
+}
+.end_nav_link:hover::after {
+  width: 100%;
+}
+.end_bottom {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.7;
 }/*# sourceMappingURL=style.css.map */

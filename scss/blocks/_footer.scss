@@ -40,3 +40,52 @@
         }
     }
 }
+
+.footer {
+    padding: 80px 0;
+    background-color: #fff;
+
+    &_box_box_txt {
+        font-size: 20px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        padding-left: 0;
+
+        &:hover {
+            color: #555; // Чуть светлее при наведении
+            padding-left: 15px; // Текст мягко отъезжает вправо
+            
+            &::before {
+                content: '→';
+                position: absolute;
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        &::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #000;
+        }
+    }
+
+    &_link {
+        display: inline-block;
+        margin-top: 30px;
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+        font-size: 18px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateX(10px); // Ссылка вся целиком двигается вправо
+        }
+    }
+}

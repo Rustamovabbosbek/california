@@ -1,39 +1,24 @@
-const title = document.querySelector('.into_banner_info_title');
-const text = "The new phones are here \n take a look.";
-let i = 0;
-
-function typeWriter() {
-    if (i < text.length) {
-        // Если попадается символ переноса строки \n, ставим <br>
-        if (text.charAt(i) === "\n") {
-            title.innerHTML += "<br>";
-        } else {
-            title.innerHTML += text.charAt(i);
-        }
-        i++;
-        setTimeout(typeWriter, 100); // Скорость печати (100мс)
-    }
-}
-
-// Очищаем заголовок перед началом, чтобы он не дублировался
-title.innerHTML = '';
-// Запускаем анимацию
-typeWriter();   
-
+// Оставляем только ОДИН экземпляр наблюдателя
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Когда зашли в секцию — добавляем класс
+            // Когда зашли в секцию — плавно показываем
             entry.target.classList.add('appeared');
         } else {
-            // Когда ушли из секции — убираем класс (анимация сбросится)
-            entry.target.classList.remove('appeared');
+            // Когда ушли далеко — сбрасываем (без тряски)
+            // Мы убираем класс только если элемент реально ушел с экрана
+            const rect = entry.boundingClientRect;
+            if (rect.top > window.innerHeight || rect.bottom < 0) {
+                 entry.target.classList.remove('appeared');
+            }
         }
     });
 }, { 
-    threshold: 0.1 // Сработает, как только покажется край карточки
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px' // Увеличил отступ, чтобы точно не трясло
 });
 
+// Запускаем слежку за всеми карточками
 document.querySelectorAll('.animate-card').forEach(card => {
     observer.observe(card);
 });

@@ -78,3 +78,44 @@
     }
 }
 
+.end {
+    padding-top: 50px;
+    border-top: 1px solid #eee;
+
+    &_nav_link {
+        display: block;
+        color: #777;
+        text-decoration: none;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+        width: fit-content;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #000;
+            transition: width 0.3s ease;
+        }
+
+        &:hover {
+            color: #000;
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    &_bottom {
+        margin-top: 40px;
+        padding: 20px 0;
+        border-top: 1px solid #f5f5f5;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0.7;
+    }
+}
